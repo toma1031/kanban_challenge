@@ -1,0 +1,43 @@
+.navbar-brand {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 48px 0px 48px 48px;
+}
+
+.navbar {
+  height: 140px;
+  box-shadow :0px 0px 10px silver;
+  border-bottom: 4px;
+  margin-bottom: 48;
+}
+
+.navbar-brand:link, .navbar-brand:visited, .navbar-brand:hover, .navbar-brand:active {
+  color: black;
+}
+
+.navbar-nav:link, .navbar-nav:visited, .navbar-nav:hover, .navbar-nav:active{
+  color: black;
+}
+
+.container {
+  margin-top: 48px;
+}
+.backlog_header {
+  background: lightgray;
+  width: 368px;
+  box-shadow: 0px 2px 4px gray;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.backlog_container {
+  background: lightgray;
+  width: 368px;
+  box-shadow: 0px 2px 4px gray;
+  border-radius: 5px;
+}
+
+.card {
+  background: white;
+  width: 300px;
+}

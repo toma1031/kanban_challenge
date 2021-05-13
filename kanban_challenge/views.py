@@ -18,9 +18,14 @@ class IndexView(TemplateView):
     context['backlogs']= TicketCard.objects.filter(status=1)
     context['progress'] = TicketCard.objects.filter(status=2)
     context['completes'] = TicketCard.objects.filter(status=3)
+    context['form'] = TicketCardForm # ←こちらを追加
     return context
 
-  # def form_valid(self, form):
-  #   form = form.save(commit=False)
-  #   form.save()
-  #   return redirect('index')
+# TemplateViewはdef form_valid() を持っていないので
+# def post() 側で処理を書いてあげる必要がある
+  def post(self, request, **kwargs):
+        form = TicketCardForm(request.POST)
+        if form.is_valid():
+          print(request.POST)
+          form.save()
+          return redirect('kanban_challenge:index')

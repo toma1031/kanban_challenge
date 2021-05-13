@@ -5,12 +5,12 @@ from django.core.exceptions import ValidationError
 
 class TicketCardForm(forms.ModelForm):
   content = forms.CharField(label='contnt', required=True)
-  post_people = forms.CharField(label='Name', required=True)
+  post_person = forms.CharField(label='Name', required=True)
 
 # このMetaの中身というのはmodelsのフィールドを元にしている
   class Meta:
       model = TicketCard
       fields = [
           'content',
-          'post_people',
+          'post_person',
       ]
