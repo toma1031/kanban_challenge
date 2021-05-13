@@ -4,67 +4,70 @@
 <div class="backlog_lane col-lg-4">
   <div class="form w-100 text-center m-auto">
     <h2 class="backlog_header">Backlog</h2>
-    <div class="backlog_container">
-      {% for backlog in backlogs %}
-      <div class="card justify-content-center">  
-        <ul>
+    <div class="backlog_container pt-2 pb-2">
+      <ul>
+        {% for backlog in backlogs %}
+        <div class="card justify-content-center">
           <div class="card-body">
             <p class="card-text">{{ backlog.content|truncatechars:100 }}</p>
           </div>
           <div class="card-footer text-muted">
-            {{ backlog.created|date }} by {{ backlog.post_person }}
+            {{ backlog.created|date:"n/j/Y" }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ backlog.post_person }}
           </div>
-        </ul>
+        </div>
+        {% endfor %}
+      </ul>
+      <button type="button" class="clear-decoration">+ Add Card</button>
+      <div class="card justify-content-center m-auto">
+        
+          <form action="" method="POST">
+            <div class="card-input card-body">
+            {% csrf_token %}
+            {{ form.errors }}
+            <div class="form-group">{{ form.content }}</div>
+            <div class="form-group">{{ form.post_person }}</div>
+            <button class="btn btn-primary" type="submit">Done</button>
+            </div>
+          </form>
       </div>
-      {% endfor %}
-      <form action="" method="POST">
-        <div class="">
-          {% csrf_token %}
-          {{ form.errors }}
-          <div class="row justify-content-center">
-            <div class="col-3">{{ form.content }}</div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="cco-3">{{ form.post_person }}</div>
-          </div>
-          <button class="btn btn-warning" type="submit">Done</button>
-      </form>  
     </div>
   </div>
 </div>
-
 <div class="progress_lane col-lg-4">
   <div class="form w-100 text-center m-auto">
     <h2 class="progress_header">In Progress</h2>
-    <div class="progress_container">
-      {% for progres in progress %}
+    <div class="progress_container pt-2 pb-2">
       <ul>
-        <div class="card-body">
-          <p class="card-text">{{ progres.content|truncatechars:100 }}</p>
+        {% for progres in progress %}
+        <div class="card justify-content-center">
+          <div class="card-body">
+            <p class="card-text">{{ progres.content|truncatechars:100 }}</p>
+          </div>
+          <div class="card-footer text-muted">
+            {{ progres.created|date:"n/j/Y" }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ progres.post_person }}
+          </div>
         </div>
-        <div class="card-footer text-muted">
-          {{ progres.created|date }} by {{ progres.post_person }}
-        </div>
+        {% endfor %}
       </ul>
-      {% endfor %}
     </div>
   </div>
 </div>
-
 <div class="complete_lane col-lg-4">
   <div class="form w-100 text-center m-auto">
     <h2 class="complete_header">Complete</h2>
-    <div class="complete_container">
-      {% for complete in completes %}
+    <div class="complete_container pt-2 pb-2">
       <ul>
-        <div class="card-body">
-          <p class="card-text">{{ complete.content|truncatechars:100 }}</p>
+        {% for complete in completes %}
+        <div class="card justify-content-center">
+          <div class="card-body">
+            <p class="card-text">{{ complete.content|truncatechars:100 }}</p>
+          </div>
+          <div class="card-footer text-muted">
+            {{ complete.created|date:"n/j/Y" }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ complete.post_person }}
+          </div>
         </div>
-        <div class="card-footer text-muted">
-          {{ complete.created|date }} by {{ complete.post_person }}
-        </div>
+        {% endfor %}
       </ul>
-      {% endfor %}
     </div>
   </div>
 </div>
