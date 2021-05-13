@@ -11,4 +11,4 @@ class TicketCard (models.Model):
   created = models.DateTimeField("Date", default=timezone.now)
 
   def __str__(self):
-    return self.status
+    return str(self.status)
