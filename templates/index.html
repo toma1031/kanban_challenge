@@ -11,24 +11,24 @@
           <div class="card-body">
             <p class="card-text">{{ backlog.content|truncatechars:100 }}</p>
           </div>
-          <div class="card-footer text-muted">
-            {{ backlog.created|date:"n/j/Y" }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ backlog.post_person }}
+          <div class="cardfooter">
+            {{ backlog.created|date:"n/j/Y" }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ backlog.post_person }}
           </div>
         </div>
         {% endfor %}
       </ul>
       <button type="button" class="clear-decoration">+ Add Card</button>
-      <div class="card justify-content-center m-auto">
-        
-          <form action="" method="POST">
-            <div class="card-input card-body">
+      <div class="card justify-content-center m-auto card-input">
+        <form action="" method="POST">
+          <div class="card-body">
             {% csrf_token %}
             {{ form.errors }}
             <div class="form-group">{{ form.content }}</div>
             <div class="form-group">{{ form.post_person }}</div>
-            <button class="btn btn-primary" type="submit">Done</button>
-            </div>
-          </form>
+            <p style="display:inline" class="creating">Creating...</p>
+            <button class="btn btn-primary" type="submit" style="display:inline">Done</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -43,8 +43,8 @@
           <div class="card-body">
             <p class="card-text">{{ progres.content|truncatechars:100 }}</p>
           </div>
-          <div class="card-footer text-muted">
-            {{ progres.created|date:"n/j/Y" }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ progres.post_person }}
+          <div class="cardfooter">
+            {{ progres.created|date:"n/j/Y" }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ progres.post_person }}
           </div>
         </div>
         {% endfor %}
@@ -62,8 +62,8 @@
           <div class="card-body">
             <p class="card-text">{{ complete.content|truncatechars:100 }}</p>
           </div>
-          <div class="card-footer text-muted">
-            {{ complete.created|date:"n/j/Y" }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ complete.post_person }}
+          <div class="cardfooter">
+            {{ complete.created|date:"n/j/Y" }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ complete.post_person }}
           </div>
         </div>
         {% endfor %}

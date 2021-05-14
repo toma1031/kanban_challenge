@@ -8,7 +8,6 @@
   height: 140px;
   box-shadow :0px 0px 10px silver;
   border-bottom: 4px;
-  margin-bottom: 48;
 }
 
 .navbar-brand:link, .navbar-brand:visited, .navbar-brand:hover, .navbar-brand:active {
@@ -26,65 +25,56 @@
   background: lightgray;
   width: 368px;
   box-shadow: 0px 2px 4px gray;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-bottom: 30px;
   color: white;
+  padding: 10px;
 }
 
 .backlog_container {
   background: lightgray;
   width: 368px;
   box-shadow: 0px 2px 4px gray;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .progress_header {
   background: blue;
   width: 368px;
   box-shadow: 0px 2px 4px gray;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-bottom: 30px;
   color: white;
+  padding: 10px;
 }
 
 .progress_container {
   background: blue;
   width: 368px;
   box-shadow: 0px 2px 4px gray;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .complete_header {
   background: green;
   width: 368px;
   box-shadow: 0px 2px 4px gray;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-bottom: 30px;
   color: white;
+  padding: 10px;
 }
 
 .complete_container {
   background: green;
   width: 368px;
   box-shadow: 0px 2px 4px gray;
-  border-radius: 5px;
-}
-
-.card {
-  background: white;
-  width: 300px;
-  margin: 16px 0px 16px 0px;
   border-radius: 10px;
-}
-
-.card-footer {
-  background: white;
 }
 
 form {
   display:none;
 }
-
 
 input {
   border:none;
@@ -95,11 +85,38 @@ input {
 .card-input {
   border: solid red;
   border-width: 4px;
+  border-radius: 25px;
 }
 
 .clear-decoration {
   color: white;
   border: none;  /* 枠線を消す */
-  outline: none; /* クリックしたときに表示される枠線を消す */
   background: transparent; /* 背景の灰色を消す */
+  padding: 20px;
+  outline: none; /* クリックしたときに表示される枠線を消す */
+}
+
+/* buttonタグでボタンを作った際に、そのボタンをクリックするとブルーのぼやっとした枠線が表示されます。
+下記はそれをCSSで消すコードです。 */
+button:focus {
+	outline:0;
+}
+
+.clear-decoration:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.card {
+  background: white;
+  width: 300px;
+  margin: 16px 0px 16px 0px;
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.creating {
+  margin-right: 100px;
 }
