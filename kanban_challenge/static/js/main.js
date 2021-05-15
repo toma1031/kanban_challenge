@@ -1,8 +1,9 @@
-// +ADD CARD button
-$(function () {
-  $('button').on('click', () => {
-      $('form').show();
-  });
+// フォームのカード自体をdivタグで囲み
+// 囲うのに使用したdivタグにはformというidとd-noneというクラスを付与した。
+// d-noneクラスは要素を隠すbootstrapのクラスです。
+//  + add cardをクリックしたらそのid="form"の要素からd-noneを削除するという操作をmain.jsに追加した。
+$('button').on('click', () => {
+  $('#form').removeClass('d-none');
 });
 
 // クリックされた時、アラートを出す

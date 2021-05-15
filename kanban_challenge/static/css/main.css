@@ -1,23 +1,28 @@
+body {
+  font-family: monospace;
+}
 .navbar-brand {
   font-size: 36px;
   font-weight: bold;
   margin: 48px 0px 48px 48px;
 }
-
 .navbar {
   height: 140px;
-  box-shadow :0px 0px 10px silver;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-bottom: 4px;
 }
-
-.navbar-brand:link, .navbar-brand:visited, .navbar-brand:hover, .navbar-brand:active {
+.navbar-brand:link,
+.navbar-brand:visited,
+.navbar-brand:hover,
+.navbar-brand:active {
   color: black;
 }
-
-.navbar-nav:link, .navbar-nav:visited, .navbar-nav:hover, .navbar-nav:active{
+.navbar-nav:link,
+.navbar-nav:visited,
+.navbar-nav:hover,
+.navbar-nav:active {
   color: black;
 }
-
 .container {
   margin-top: 48px;
 }
@@ -25,134 +30,116 @@
 /* .backlog_lane {
   margin-right: 80px;
 } */
+
 .backlog_header {
   background: lightgray;
   width: 368px;
-  box-shadow: 0px 2px 4px gray;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   margin-bottom: 30px;
   color: white;
   padding: 10px;
 }
-
 .backlog_container {
   background: lightgray;
   width: 368px;
-  box-shadow: 0px 2px 4px gray;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  margin-bottom: 70px;
 }
-
 .progress_header {
   background: blue;
   width: 368px;
-  box-shadow: 0px 2px 4px gray;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   margin-bottom: 30px;
   color: white;
   padding: 10px;
 }
-
 .progress_container {
   background: blue;
   width: 368px;
-  box-shadow: 0px 2px 4px gray;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  margin-bottom: 70px;
 }
-
 .complete_header {
   background: green;
   width: 368px;
-  box-shadow: 0px 2px 4px gray;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   margin-bottom: 30px;
   color: white;
   padding: 10px;
 }
-
 .complete_container {
   background: green;
   width: 368px;
-  box-shadow: 0px 2px 4px gray;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  margin-bottom: 70px;
 }
-
-form {
-  display:none;
-}
-
 input {
-  border:none;
+  border: none;
   width: 200px;
   outline: none;
 }
-
 .card-input {
   border: solid red;
   border-width: 4px;
   border-radius: 25px;
 }
-
 .clear-decoration {
   color: white;
-  border: none;  /* 枠線を消す */
-  background: transparent; /* 背景の灰色を消す */
+  border: none;
+  /* 枠線を消す */
+  background: transparent;
+  /* 背景の灰色を消す */
   padding: 20px;
-  outline: none; /* クリックしたときに表示される枠線を消す */
+  outline: none;
+  /* クリックしたときに表示される枠線を消す */
 }
-
 /* buttonタグでボタンを作った際に、そのボタンをクリックするとブルーのぼやっとした枠線が表示されます。
 下記はそれをCSSで消すコードです。 */
 button:focus {
-	outline:0;
+  outline: 0;
 }
-
 .clear-decoration:hover {
   transform: scale(1.1, 1.1);
 }
-
 .card {
   background: white;
   width: 300px;
   margin: 16px 0px 16px 0px;
   border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 }
-
 .card:hover {
   transform: scale(1.1, 1.1);
 }
-
-
-
 .creating {
   margin-right: 100px;
 }
-
-
-
-
-.test {
-  height: 700px;
-	overflow: auto;
+/* 矢印を非表示にする */
+.invisible {
+  visibility: hidden;
 }
-
-.test::-webkit-scrollbar {
+.scrollbar {
+  height: 700px;
+  overflow: auto;
+}
+.scrollbar::-webkit-scrollbar {
   width: 5px;
 }
-
-.test::-webkit-scrollbar-track {
-  background: rgb(0,0,0);
-  border: 1px transparent; /* THIS IS IMPORTANT */
-  background-clip: content-box; 
-}
-
-.test::-webkit-scrollbar-thumb {
-  background: white;
-  border: 1px solid rgb(0,0,0);
-  width: 10px;
+.scrollbar::-webkit-scrollbar-track {
+  background: rgb(0, 0, 0);
+  border: 1px transparent;
+  /* THIS IS IMPORTANT */
   background-clip: content-box;
 }
-
-  /* 矢印を非表示にする */
-.invisible {
-  visibility:hidden;
+.scrollbar::-webkit-scrollbar-thumb {
+  background: white;
+  border: 1px solid rgb(0, 0, 0);
+  width: 10px;
+  background-clip: content-box;
 }
