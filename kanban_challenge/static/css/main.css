@@ -42,6 +42,7 @@ body {
 }
 .backlog_container {
   background: lightgray;
+  height: auto;
   width: 368px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -58,6 +59,7 @@ body {
 }
 .progress_container {
   background: blue;
+  height: auto;
   width: 368px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -74,6 +76,7 @@ body {
 }
 .complete_container {
   background: green;
+  height: auto;
   width: 368px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -109,7 +112,8 @@ button:focus {
 }
 .card {
   background: white;
-  width: 300px;
+  Height: 155px;
+  width: 330px;
   margin: 16px 0px 16px 0px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
@@ -118,8 +122,12 @@ button:focus {
   transform: scale(1.1, 1.1);
 }
 .creating {
-  margin-right: 100px;
+  margin-right: 50px;
 }
+.card-body {
+  Height: 155px;
+}
+
 /* 矢印を非表示にする */
 .invisible {
   visibility: hidden;
@@ -142,4 +150,10 @@ button:focus {
   border: 1px solid rgb(0, 0, 0);
   width: 10px;
   background-clip: content-box;
+}
+
+.c-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
