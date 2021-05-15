@@ -7,12 +7,18 @@
     <div class="backlog_container pt-2 pb-2">
       <ul>
         {% for backlog in backlogs %}
-        <div class="card justify-content-center">
-          <div class="card-body">
-            <p class="card-text">{{ backlog.content|truncatechars:100 }}</p>
-          </div>
-          <div class="cardfooter">
-            {{ backlog.created|date:"n/j/Y" }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ backlog.post_person }}
+        <div class="card">
+          <!-- d-flexでブロック要素を横に並べます。かつ、align-items-centerで中央ぞろえに設定 -->
+          <div class="d-flex align-items-center">
+            <div class="pr-3"><i class="fas fa-chevron-left invisible"></i></div>
+            <div class="card-body text-break p-0">
+              <p class="card-text">{{ backlog.content|truncatechars:100 }}</p>
+              <div class="d-flex justify-content-between p-0">
+                <p class="m-0">{{ backlog.created|date:"n/j/Y" }}</p>
+                <p class="m-0">{{ backlog.post_person }}</p>
+              </div>
+            </div>
+            <div class="pl-3"><i class="fas fa-chevron-right" data-id="{{ backlog.id }}" data-status="{{ backlog.status }}" data-href="{% url 'kanban_challenge:index' %}" data-csrf="{{ csrf_token }}"></i></div>
           </div>
         </div>
         {% endfor %}
@@ -39,12 +45,18 @@
     <div class="progress_container pt-2 pb-2">
       <ul>
         {% for progres in progress %}
-        <div class="card justify-content-center">
-          <div class="card-body">
-            <p class="card-text">{{ progres.content|truncatechars:100 }}</p>
-          </div>
-          <div class="cardfooter">
-            {{ progres.created|date:"n/j/Y" }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ progres.post_person }}
+        <div class="card">
+          <!-- d-flexでブロック要素を横に並べます。かつ、align-items-centerで中央ぞろえに設定 -->
+          <div class="d-flex align-items-center">
+            <div class="pr-3"><i class="fas fa-chevron-left" data-id="{{ progres.id }}" data-status="{{ progres.status }}" data-href="{% url 'kanban_challenge:index' %}" data-csrf="{{ csrf_token }}"></i></div>
+            <div class="card-body text-break p-0">
+              <p class="card-text">{{ progres.content|truncatechars:100 }}</p>
+              <div class="d-flex justify-content-between p-0">
+                <p class="m-0">{{ progres.created|date:"n/j/Y" }}</p>
+                <p class="m-0">{{ progres.post_person }}</p>
+              </div>
+            </div>
+            <div class="pl-3"><i class="fas fa-chevron-right" data-id="{{ progres.id }}" data-status="{{ progres.status }}" data-href="{% url 'kanban_challenge:index' %}" data-csrf="{{ csrf_token }}"></i></div>
           </div>
         </div>
         {% endfor %}
@@ -58,12 +70,18 @@
     <div class="complete_container pt-2 pb-2">
       <ul>
         {% for complete in completes %}
-        <div class="card justify-content-center">
-          <div class="card-body">
-            <p class="card-text">{{ complete.content|truncatechars:100 }}</p>
-          </div>
-          <div class="cardfooter">
-            {{ complete.created|date:"n/j/Y" }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ complete.post_person }}
+        <div class="card">
+          <!-- d-flexでブロック要素を横に並べます。かつ、align-items-centerで中央ぞろえに設定 -->
+          <div class="d-flex align-items-center">
+            <div class="pr-3"><i class="fas fa-chevron-left" data-id="{{ complete.id }}" data-status="{{ complete.status }}" data-href="{% url 'kanban_challenge:index' %}" data-csrf="{{ csrf_token }}"></i></div>
+            <div class="card-body text-break p-0">
+              <p class="card-text">{{ complete.content|truncatechars:100 }}</p>
+              <div class="d-flex justify-content-between p-0">
+                <p class="m-0">{{ complete.created|date:"n/j/Y" }}</p>
+                <p class="m-0">{{ complete.post_person }}</p>
+              </div>
+            </div>
+            <div class="pl-3"><i class="fas fa-chevron-right invisible" data-id="{{ complete.id }}" data-status="{{ complete.status }}" data-href="{% url 'kanban_challenge:index' %}" data-csrf="{{ csrf_token }}"></i></div>
           </div>
         </div>
         {% endfor %}

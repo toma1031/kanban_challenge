@@ -21,6 +21,10 @@
 .container {
   margin-top: 48px;
 }
+
+/* .backlog_lane {
+  margin-right: 80px;
+} */
 .backlog_header {
   background: lightgray;
   width: 368px;
@@ -117,6 +121,38 @@ button:focus {
   transform: scale(1.1, 1.1);
 }
 
+
+
 .creating {
   margin-right: 100px;
+}
+
+
+
+
+.test {
+  height: 700px;
+	overflow: auto;
+}
+
+.test::-webkit-scrollbar {
+  width: 5px;
+}
+
+.test::-webkit-scrollbar-track {
+  background: rgb(0,0,0);
+  border: 1px transparent; /* THIS IS IMPORTANT */
+  background-clip: content-box; 
+}
+
+.test::-webkit-scrollbar-thumb {
+  background: white;
+  border: 1px solid rgb(0,0,0);
+  width: 10px;
+  background-clip: content-box;
+}
+
+  /* 矢印を非表示にする */
+.invisible {
+  visibility:hidden;
 }

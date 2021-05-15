@@ -24,8 +24,14 @@ class IndexView(TemplateView):
 # TemplateViewはdef form_valid() を持っていないので
 # def post() 側で処理を書いてあげる必要がある
   def post(self, request, **kwargs):
-        form = TicketCardForm(request.POST)
-        if form.is_valid():
-          print(request.POST)
-          form.save()
-          return redirect('kanban_challenge:index')
+# もしTicketCardのステータスが１なら
+    if self.request.POST.get('data-id', None):
+      update2 = TicketCard.objects.filter(id=self.request.POST.get('data-id')).update(status=self.request.POST.get('status-id'))
+      print(update2)
+      print('B')
+    else:
+      print('A')
+      form = TicketCardForm(request.POST)
+      if form.is_valid():
+        form.save()
+    return redirect('kanban_challenge:index')
