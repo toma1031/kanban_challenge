@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block main %}
-<div class="backlog_lane col-lg-4">
+<div class="backlog_lane col-lg-3">
   <div class="form w-100 text-center m-auto">
     <h2 class="backlog_header">Backlog</h2>
     <div class="backlog_container pt-2 pb-2 scrollbar">
@@ -36,18 +36,19 @@
               {{ form.errors }}
               <div class="form-group">{{ form.content }}</div>
               <div class="form-group">{{ form.post_person }}</div>
-              <p style="display:inline" class="creating">Creating...</p>
-              <button class="btn btn-primary" type="submit" style="display:inline">Done</button>
+              <div class="d-flex c-footer">
+                <p style="display:inline" class="creating">Creating...</p>
+                <button class="btn btn-primary" type="submit" style="display:inline">Done</button>
+              </div>
+
             </div>
           </form>
         </div>
       </div>
     </div>
   </div>
-  <div class="bottom">
-  </div>
 </div>
-<div class="progress_lane col-lg-4">
+<div class="progress_lane col-lg-3 ml-80px">
   <div class="form w-100 text-center m-auto">
     <h2 class="progress_header">In Progress</h2>
     <div class="progress_container pt-2 pb-2 scrollbar">
@@ -76,7 +77,7 @@
     </div>
   </div>
 </div>
-<div class="complete_lane col-lg-4">
+<div class="complete_lane col-lg-3 ml-80px">
   <div class="form w-100 text-center m-auto">
     <h2 class="complete_header">Complete</h2>
     <div class="complete_container pt-2 pb-2 scrollbar">
