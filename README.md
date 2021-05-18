@@ -11,7 +11,7 @@
 * After that, go terminal command 'pip install -r requirements.txt'
 * You can download the library which you need to start App.
 * How to start App?
-* Go terminal and comand "python manage.py runserver"
+* Go terminal and comand "python manage.py migrate". After that, do command "python manage.py runserver"
 * You can see how App is.
     
 # Author

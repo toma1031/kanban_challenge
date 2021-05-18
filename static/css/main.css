@@ -22,9 +22,6 @@
   margin-top: 48px;
 }
 
-/* .backlog_lane {
-  margin-right: 80px;
-} */
 .backlog_header {
   background: lightgray;
   width: 368px;
@@ -130,22 +127,22 @@ button:focus {
 
 
 
-.scrollbar {
+.test {
   height: 700px;
 	overflow: auto;
 }
 
-.scrollbar::-webkit-scrollbar {
+.test::-webkit-scrollbar {
   width: 5px;
 }
 
-.scrollbar::-webkit-scrollbar-track {
+.test::-webkit-scrollbar-track {
   background: rgb(0,0,0);
   border: 1px transparent; /* THIS IS IMPORTANT */
   background-clip: content-box; 
 }
 
-.scrollbar::-webkit-scrollbar-thumb {
+.test::-webkit-scrollbar-thumb {
   background: white;
   border: 1px solid rgb(0,0,0);
   width: 10px;

@@ -1,3 +1,4 @@
+from typing import ContextManager, no_type_check
 from django.shortcuts import render, redirect, reverse
 from django.views.generic import TemplateView
 from .models import TicketCard
@@ -13,11 +14,16 @@ class IndexView(TemplateView):
   success_url = reverse_lazy('index')
 
   def get_context_data(self, **kwargs):
+    # contextという変数にTemplateView（ここではsuperがTemplateViewを表している）のContextデータをGetして辞書型として代入
+    # この時点で変数contextにはticketcard_listが辞書型で入っている。
     context = super().get_context_data(**kwargs)
+    # １、つまりcontextには？？？が入っている。Printすると？？？と出てくる
+    print(context)
     # backlogsというkeyに対して、status=1のTicketCardのオブジェクトをvalueとして入れ込んでいる
     context['backlogs']= TicketCard.objects.filter(status=1)
     context['progress'] = TicketCard.objects.filter(status=2)
     context['completes'] = TicketCard.objects.filter(status=3)
+    # ２、これはなぜ必要なか？
     context['form'] = TicketCardForm # ←こちらを追加
     return context
 
