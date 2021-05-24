@@ -8,3 +8,5 @@ $(function () {
 $('.fa-chevron-right').click(function () {
   alert('クリックされました！');
 });
+
+
